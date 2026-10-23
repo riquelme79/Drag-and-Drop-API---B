@@ -1,0 +1,27 @@
+:root{--fundo:#1f3a5f;--coluna:#ebeef3;--texto:#1c2430;--suave:#6b7685}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;background:var(--fundo);font-family:"Segoe UI",system-ui,sans-serif;color:var(--texto)}
+.topo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:20px 32px;color:#fff}
+.topo h1{font-size:1.4rem}
+form{display:flex;gap:8px}
+input{padding:9px 12px;border:0;border-radius:6px;font:inherit;width:260px;max-width:100%}
+form button{padding:9px 16px;border:0;border-radius:6px;background:#3fa66b;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+form button:hover{background:#34925d}
+input:focus-visible,button:focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+
+.quadro{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:8px 32px 32px;align-items:start}
+.coluna{background:var(--coluna);border-radius:10px;padding:14px;transition:box-shadow .15s}
+.coluna.sobre{box-shadow:0 0 0 3px #ffd166}
+.coluna h2{font-size:.95rem;display:flex;justify-content:space-between;margin-bottom:12px}
+.conta{background:#d3d9e2;border-radius:10px;padding:0 9px;font-size:.8rem;color:var(--suave)}
+.lista{min-height:120px;display:flex;flex-direction:column;gap:8px}
+.card{background:#fff;border-radius:6px;padding:10px 12px;display:flex;justify-content:space-between;gap:8px;align-items:flex-start;box-shadow:0 1px 2px rgba(0,0,0,.18);cursor:grab;border-left:5px solid #9aa6b6}
+.card:active{cursor:grabbing}
+.card.arrastando{opacity:.4}
+.coluna[data-status=fazer] .card{border-left-color:#e3694f}
+.coluna[data-status=andamento] .card{border-left-color:#f0b429}
+.coluna[data-status=concluido] .card{border-left-color:#3fa66b}
+.coluna[data-status=concluido] .card span{text-decoration:line-through;color:var(--suave)}
+.card button{border:0;background:none;color:var(--suave);cursor:pointer;font-size:1rem;line-height:1}
+.card button:hover{color:#c0392b}
+@media(max-width:760px){.quadro{grid-template-columns:1fr;padding:8px 16px 24px}.topo{padding:16px}}

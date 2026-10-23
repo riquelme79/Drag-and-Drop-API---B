@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plano de Estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Plano de estudos</h1>
+    <form id="form" autocomplete="off">
+      <input id="titulo" required maxlength="60" placeholder="Nova tarefa (ex.: Redação do Enem)">
+      <button type="submit">Adicionar</button>
+    </form>
+  </header>
+
+  <main class="quadro">
+    <section class="coluna" data-status="fazer">
+      <h2>A Fazer <span class="conta">0</span></h2>
+      <div class="lista"></div>
+    </section>
+    <section class="coluna" data-status="andamento">
+      <h2>Em Andamento <span class="conta">0</span></h2>
+      <div class="lista"></div>
+    </section>
+    <section class="coluna" data-status="concluido">
+      <h2>Concluído <span class="conta">0</span></h2>
+      <div class="lista"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
